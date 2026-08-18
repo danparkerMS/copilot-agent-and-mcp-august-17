@@ -24,9 +24,7 @@ const Favorites = () => {
     const result = await dispatch(removeFavorite({ token, bookId }));
     if (removeFavorite.rejected.match(result)) {
       setRemoveError('Failed to remove book from favorites. Please try again.');
-      return;
     }
-    dispatch(fetchFavorites(token));
   };
 
   if (status === 'loading') return <div>Loading...</div>;
